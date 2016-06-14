@@ -638,9 +638,6 @@ void displayAverages()
 	 
 	cout<<"You will need to look up a month to start your average."<<endl;
 	cout<<"You will need to add additional months after that."<<endl;
-	cout<<"***Note***"<<endl;
-	cout<<"You will need to select the same month if you want both"<<endl;
-	cout<<"the Fixed and Varied Expenses to Calculate."<<endl;
 	
 	//Establish File Name
 	
