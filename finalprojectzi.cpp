@@ -1,5 +1,6 @@
 //finalprojectzi.cpp Final Project for C++
 //Budget Buddy
+//Created by Zach Iroz
 
 #include <fstream>
 #include <string>
