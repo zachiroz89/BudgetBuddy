@@ -22,6 +22,7 @@ int main()
 	int menuOption=0;
 	do //begin Loop
 	{	
+		//Display options and get user input
 		cout<<" \t \t "<<"Main Menu"<<endl<<endl;
 		cout<<"1: Start a New Month ***(New Users Start Here)***"<<endl;
 		cout<<"2: Edit Expenses"<<endl;
@@ -59,6 +60,7 @@ int main()
 //********function details********
 void newMonth()
 {
+	//Add a new month as txt file to be edited and potentially referenced back to
 	double curBalance=0.0;
 	int month=0;
 	string year="";
@@ -69,7 +71,7 @@ void newMonth()
 	char newExpense =' ';
 	//declare Arrays
 	string monthName[12]={"January","February","March","April", "May","June","July","August","September","October","November","December"};
-	//string monthNum[12]={"1","2","3","4","5","6","7","8","9","10","11","12"};
+	
 	
 	char titheSave=' ';
 	double titheSaveAmount=0.0;
@@ -145,11 +147,12 @@ void newMonth()
 	
 		else if (fixedVaried=='V')
 		{
-			
+			//Get Variable from user
 			cout<<"Enter Current Balance:$ ";
 			cin>>curBalance;
 			cout<<endl<<endl;
 			
+			//get optional variable info
 			cout<<"Would you like to calculate a Percentage of"<<endl;
 			cout<<"your balance or income to go towards tithes"<<endl;
 			cout<<"or saving?(Y or N): ";
@@ -160,9 +163,9 @@ void newMonth()
 			{
 				cout<<"Enter Percentage(1-100): ";
 				cin>>titheSaveRate;
-				
+				//calculate percent
 				titheSaveAmount=curBalance * (titheSaveRate/100);
-				
+				//display expense and amount
 				cout<<endl<<"***Recommended amount to add as an Expense:$ "<<titheSaveAmount<<endl<<endl;
 			}
 			else if(titheSave=='N')
@@ -177,6 +180,7 @@ void newMonth()
 			
 			//enter month year and Fixed 
 			//Display error message if not valid
+			//This names the txt file
 			cout<<"Enter Month (1-12)(-1 to return to main menu): ";
 			cin>>month;
 			cout<<endl;
@@ -303,25 +307,27 @@ void editExpenses()
 	//returns to main menu
 }//end of editExpenses Function
 
+
+//Adds expense to txt file instead of changes entirely
 void addExpenses()
 {
+	//declare variables
 	int month=0;
 	string year="";
 	string fileNameMonthYearFV=""; 
 	string expense = "";
 	double dollarAmount=0.0;
 	char fixedVaried=' ';
-	
+	char titheSave=' ';
+	double titheSaveAmount=0.0;
+	double titheSaveRate=0.0;
+	double curBalance=0.0;
 	
 	//declare Arrays
 	string monthName[12]={"January","February","March","April", "May","June","July","August","September","October","November","December"};
 	//string monthNum[12]={"1","2","3","4","5","6","7","8","9","10","11","12"};
 	
 	
-	char titheSave=' ';
-	double titheSaveAmount=0.0;
-	double titheSaveRate=0.0;
-	double curBalance=0.0;
 	
 	//Establish File Name
 	//enter month year and Fixed 
@@ -421,6 +427,7 @@ void addExpenses()
 
 void displayMonth()
 {
+	//declare variables
 	int month=0;
 	string year="";
 	string fileNameMonthYearFV=""; 
@@ -505,7 +512,7 @@ void displayMonth()
 				//Establish File Name
 				//enter month year and Fixed 
 				//Display error message if not valid
-				
+				//This is determined by the user
 			cout<<"Enter Month (1-12)(-1 to return to main menu): ";
 			cin>>month;
 			cout<<endl;
@@ -605,9 +612,11 @@ void displayMonth()
 	}while(month!=-1);
 }//end displayMonth function
 
+
+//Function to Calculate and Display totals and averages
 void displayAverages()
 {
-	
+	//declare variables
 	int month=0;
 	string year="";
 	string fileNameMonthYearFV=""; 
